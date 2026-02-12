@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine Frequency — Tune Your Soul to God's Voice</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D48B;
+      --dark: #1A1A2E;
+      --dark-blue: #16213E;
+      --accent: #0F3460;
+      --white: #FAFAFA;
+      --cream: #FFF8E7;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .logo span { color: var(--white); }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 50%, var(--accent) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+
+    .hero::after {
+      content: '\2720';
+      position: absolute;
+      font-size: 400px;
+      color: rgba(201, 168, 76, 0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      padding: 18px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      box-shadow: 0 4px 30px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(201, 168, 76, 0.6);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 60px;
+    }
+
+    .hero-stats div {
+      text-align: center;
+    }
+
+    .hero-stats strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .hero-stats span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 100px 20px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #777;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-title .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, var(--dark), var(--accent));
+      border-radius: 20px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 50%;
+      animation: pulse 3s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .about-image .cross-icon {
+      font-size: 120px;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .about-text .highlight {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+      border: 1px solid #f0f0f0;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-color: var(--gold);
+    }
+
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--cream), #fff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2rem;
+      border: 2px solid var(--gold);
+    }
+
+    .benefit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .benefit-card p {
+      color: #777;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+      color: white;
+    }
+
+    .testimonials .section-title h2 { color: white; }
+    .testimonials .section-title p { color: rgba(255,255,255,0.6); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 35px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.3;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+
+    .testimonial-author span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    /* ===== OFFER ===== */
+    .offer {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .offer-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 60px rgba(0,0,0,0.08);
+      border: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .offer-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .price-old {
+      font-size: 1.2rem;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .price small {
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    .price-installment {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .offer-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    .offer-list li {
+      padding: 10px 0;
+      color: #555;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .offer-list li::before {
+      content: '\2713';
+      color: var(--gold);
+      font-weight: 700;
+      margin-right: 12px;
+    }
+
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+      color: #999;
+      font-size: 0.85rem;
+    }
+
+    .guarantee-icon {
+      font-size: 1.5rem;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 25px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-top: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .logo {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 300px;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav { display: none; }
+
+      .offer-box {
+        padding: 35px 25px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">DIVINE <span>FREQUENCY</span></a>
+      <nav>
+        <a href="#about">The Product</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#offer">Get Yours</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Sacred &bull; Powerful &bull; Transformative</div>
+      <h1>Tune Your Soul <em>to God's Frequency</em></h1>
+      <p>
+        Divine Frequency is a sacred audio program rooted in Catholic tradition,
+        designed to align your mind, body, and spirit with the presence of God.
+        Experience the peace, clarity, and spiritual renewal that thousands have already discovered.
+      </p>
+      <a href="#offer" class="btn-primary">Start Listening Now</a>
+      <div class="hero-stats">
+        <div>
+          <strong>18,000+</strong>
+          <span>Lives Transformed</span>
+        </div>
+        <div>
+          <strong>4.9 ★</strong>
+          <span>Average Rating</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>Faith-Based</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE PRODUCT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="cross-icon">✝</div>
+        </div>
+        <div class="about-text">
+          <h3>What Is <span class="highlight">Divine Frequency</span>?</h3>
+          <p>
+            Divine Frequency is a carefully crafted collection of sacred audio sessions
+            that combine Gregorian chant harmonics, scriptural meditations, and
+            prayer-infused soundscapes to draw you closer to God's presence.
+          </p>
+          <p>
+            Rooted in centuries of Catholic contemplative tradition and enriched with
+            sacred music frequencies, this program was designed to be your
+            <strong>daily gateway to deeper prayer and spiritual communion</strong>.
+          </p>
+          <p>
+            Listen during your morning devotion, before sleep, or in moments of
+            anxiety — and feel the Holy Spirit's peace wash over you like never before.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits" id="benefits">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Divine Frequency?</h2>
+        <div class="divider"></div>
+        <p>More than audio — a sacred experience that transforms your prayer life</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🙏</div>
+          <h3>Deeper Prayer Life</h3>
+          <p>
+            Sacred frequencies and guided meditations help quiet the mind,
+            allowing you to enter a deeper state of prayer and communion with God.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🕊️</div>
+          <h3>Inner Peace &amp; Calm</h3>
+          <p>
+            Release anxiety, stress, and worry as the sacred sounds realign
+            your spirit with God's perfect peace that surpasses all understanding.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">✝️</div>
+          <h3>Catholic Tradition</h3>
+          <p>
+            Every session is rooted in the rich contemplative heritage of the Catholic
+            Church, from Gregorian chants to Lectio Divina meditations.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎧</div>
+          <h3>Listen Anywhere</h3>
+          <p>
+            Instant digital access on any device. Transform your commute, your
+            quiet time, or your bedtime routine into sacred moments.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💡</div>
+          <h3>Spiritual Clarity</h3>
+          <p>
+            Clear the mental fog and discern God's will more clearly.
+            Many users report feeling guided and spiritually renewed after each session.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔄</div>
+          <h3>Lifetime Access</h3>
+          <p>
+            Pay once and receive lifetime access to all current sessions
+            plus every future update — your faith journey grows with you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Hearts Renewed by Faith</h2>
+        <div class="divider"></div>
+        <p>Hear from our brothers and sisters who have experienced the transformation</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "I've struggled with prayer my entire life — my mind would always wander.
+            Since I started using Divine Frequency, I can finally quiet my thoughts
+            and truly feel God's presence. It has completely changed my faith."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SC</div>
+            <div>
+              <strong>Sarah Collins</strong>
+              <span>Denver, CO</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "I listen every morning before work and every night before bed.
+            The Gregorian chant sessions are absolutely breathtaking.
+            My wife noticed I'm calmer, more patient, and more present with the family."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DM</div>
+            <div>
+              <strong>Daniel Murphy</strong>
+              <span>Boston, MA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "After losing my husband, I was drowning in grief. A friend from church
+            recommended Divine Frequency. The scriptural meditations brought me
+            comfort I didn't think was possible. God spoke to me through this."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PT</div>
+            <div>
+              <strong>Patricia Torres</strong>
+              <span>San Antonio, TX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer" id="offer">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get Your Divine Frequency</h2>
+        <div class="divider"></div>
+        <p>Begin your journey to deeper faith and spiritual peace today</p>
+      </div>
+      <div class="offer-box">
+        <div class="offer-badge">Special Offer</div>
+        <h3>Divine Frequency — Complete Collection</h3>
+        <div class="price-old">Was $120.00</div>
+        <div class="price">$67.00 <small>today</small></div>
+        <div class="price-installment">or 4 interest-free payments of $16.75</div>
+        <ul class="offer-list">
+          <li>Full Divine Frequency sacred audio collection</li>
+          <li>Gregorian chant meditation sessions</li>
+          <li>Guided scriptural Lectio Divina tracks</li>
+          <li>Bonus: Morning &amp; Evening prayer soundscapes</li>
+          <li>Instant digital access — download or stream</li>
+          <li>Lifetime access with all future updates included</li>
+          <li>60-day guarantee — complete satisfaction or your money back</li>
+        </ul>
+        <a href="#" class="btn-primary">Get Instant Access — $67</a>
+        <div class="guarantee">
+          <span class="guarantee-icon">🔒</span>
+          <span>100% secure checkout &bull; 60-day guarantee &bull; Instant access</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What exactly is Divine Frequency?</div>
+          <div class="faq-answer">
+            Divine Frequency is a digital collection of sacred audio sessions combining
+            Gregorian chant harmonics, scriptural meditations, and prayer soundscapes
+            designed to deepen your prayer life and draw you closer to God.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is this aligned with Catholic teaching?</div>
+          <div class="faq-answer">
+            Yes. Every session is rooted in Catholic contemplative tradition, including
+            Gregorian chant, Lectio Divina, and sacred scripture. It is designed to
+            complement — never replace — your sacramental and prayer life.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I access the audio sessions?</div>
+          <div class="faq-answer">
+            Immediately after purchase, you'll receive a link to download or stream
+            all sessions on any device — phone, tablet, or computer. No special
+            apps required.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How often should I listen?</div>
+          <div class="faq-answer">
+            We recommend listening daily, either during your morning prayer time or
+            before bed. However, you can listen whenever you feel called — during
+            adoration, commutes, or moments of stress.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if it doesn't work for me?</div>
+          <div class="faq-answer">
+            We offer a generous 60-day money-back guarantee. If Divine Frequency
+            doesn't transform your prayer life, simply reach out and we'll refund
+            every penny — no questions asked.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <a href="#" class="logo">DIVINE <span>FREQUENCY</span></a>
+      <p>
+        A sacred audio experience made with faith, prayer, and devotion.<br>
+        &copy; 2025 Divine Frequency. All rights reserved.<br>
+        This product does not replace spiritual or ecclesiastical guidance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- FAQ SCRIPT -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('active');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

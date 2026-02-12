@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosperity and Peace — God's Promise for Your Life</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D48B;
+      --dark: #1A1A2E;
+      --dark-blue: #16213E;
+      --accent: #0F3460;
+      --white: #FAFAFA;
+      --cream: #FFF8E7;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .logo span { color: var(--white); }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 50%, var(--accent) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+
+    .hero::after {
+      content: '\2720';
+      position: absolute;
+      font-size: 400px;
+      color: rgba(201, 168, 76, 0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      padding: 18px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      box-shadow: 0 4px 30px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(201, 168, 76, 0.6);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 60px;
+    }
+
+    .hero-stats div {
+      text-align: center;
+    }
+
+    .hero-stats strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .hero-stats span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 100px 20px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #777;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-title .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, var(--dark), var(--accent));
+      border-radius: 20px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 50%;
+      animation: pulse 3s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .about-image .cross-icon {
+      font-size: 120px;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .about-text .highlight {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+      border: 1px solid #f0f0f0;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-color: var(--gold);
+    }
+
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--cream), #fff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2rem;
+      border: 2px solid var(--gold);
+    }
+
+    .benefit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .benefit-card p {
+      color: #777;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+      color: white;
+    }
+
+    .testimonials .section-title h2 { color: white; }
+    .testimonials .section-title p { color: rgba(255,255,255,0.6); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 35px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.3;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+
+    .testimonial-author span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    /* ===== OFFER ===== */
+    .offer {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .offer-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 60px rgba(0,0,0,0.08);
+      border: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .offer-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .price-old {
+      font-size: 1.2rem;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .price small {
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    .price-installment {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .offer-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    .offer-list li {
+      padding: 10px 0;
+      color: #555;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .offer-list li::before {
+      content: '\2713';
+      color: var(--gold);
+      font-weight: 700;
+      margin-right: 12px;
+    }
+
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+      color: #999;
+      font-size: 0.85rem;
+    }
+
+    .guarantee-icon {
+      font-size: 1.5rem;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 25px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-top: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .logo {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 300px;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav { display: none; }
+
+      .offer-box {
+        padding: 35px 25px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">PROSPERITY <span>&amp; PEACE</span></a>
+      <nav>
+        <a href="#about">The Cross</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#offer">Get Yours</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Blessed &bull; Handcrafted &bull; Anointed</div>
+      <h1>Carry the Cross That Brings <em>Prosperity &amp; Peace</em></h1>
+      <p>
+        The Prosperity and Peace cross is a sacred handcrafted pendant anointed with
+        holy oil and inscribed with Jeremiah 29:11 — a powerful declaration that God's
+        plans for you are filled with hope, abundance, and everlasting peace.
+      </p>
+      <a href="#offer" class="btn-primary">Get My Cross Now</a>
+      <div class="hero-stats">
+        <div>
+          <strong>20,000+</strong>
+          <span>Believers Blessed</span>
+        </div>
+        <div>
+          <strong>4.9 ★</strong>
+          <span>Average Rating</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>Anointed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE PRODUCT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="cross-icon">✝</div>
+        </div>
+        <div class="about-text">
+          <h3>What Is <span class="highlight">Prosperity &amp; Peace</span>?</h3>
+          <p>
+            Prosperity and Peace is a handcrafted cross pendant made from sterling silver
+            with gold-plated accents, anointed with blessed oil following the Catholic
+            tradition. On its back is engraved Jeremiah 29:11 — <em>"For I know the plans
+            I have for you, declares the Lord, plans to prosper you and not to harm you,
+            plans to give you hope and a future."</em>
+          </p>
+          <p>
+            More than jewelry, it is a <strong>wearable covenant with God</strong> — a
+            daily proclamation over your life that the Father's plans for you are good,
+            that His peace guards your heart, and that His prosperity flows through
+            every season.
+          </p>
+          <p>
+            Wear it over your heart, hold it during prayer, and let it anchor your
+            faith in the unshakable promise that God is working all things for your good.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits" id="benefits">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Wear the Prosperity &amp; Peace Cross?</h2>
+        <div class="divider"></div>
+        <p>A sacred symbol that speaks God's promise over your life every day</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🙏</div>
+          <h3>Anointed with Purpose</h3>
+          <p>
+            Each cross is anointed with blessed oil in a prayer ceremony,
+            consecrating it as a vessel of God's promise of prosperity and peace
+            over your life.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🕊️</div>
+          <h3>Peace Beyond Understanding</h3>
+          <p>
+            In a world filled with anxiety, this cross is a tangible reminder that
+            God's peace — which surpasses all understanding — is yours to claim
+            every single day.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">✝️</div>
+          <h3>Scripture on Your Heart</h3>
+          <p>
+            Jeremiah 29:11 engraved on the back keeps God's Word literally close to
+            your heart, transforming it from a verse you read into a truth you carry.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <h3>Declaration of Prosperity</h3>
+          <p>
+            Wearing the cross is a daily act of faith — a visible declaration that you
+            reject the spirit of scarcity and walk in the abundance God has promised.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎁</div>
+          <h3>A Gift of Hope</h3>
+          <p>
+            Bless someone who is struggling with fear or uncertainty. Each cross comes
+            beautifully packaged with a prayer card — a gift that can change a life.
+          </p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💎</div>
+          <h3>Premium Craftsmanship</h3>
+          <p>
+            Sterling silver with gold-plated details, designed to be worn daily
+            without tarnishing. A piece as enduring as the promise it carries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Stories of Prosperity &amp; Peace</h2>
+        <div class="divider"></div>
+        <p>Hear from those who wear the cross and walk in God's promise</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "I lost my job and didn't know how I'd feed my family. My sister gave me
+            this cross and told me to read the verse on the back every morning. Within
+            six weeks I had a better job than before. God's plans are real."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MW</div>
+            <div>
+              <strong>Michael Walker</strong>
+              <span>Atlanta, GA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "I wear my Prosperity and Peace cross every day. The anxiety I used to feel
+            about money, about the future — it's gone. Not because my problems disappeared,
+            but because my faith became bigger than my fear. This cross reminds me daily."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CS</div>
+            <div>
+              <strong>Catherine Scott</strong>
+              <span>Charlotte, NC</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p>
+            "I bought three — one for me, my mother, and my daughter. We all hold
+            them when we pray together on Sunday nights. It has become the most
+            meaningful thing in our family. The quality is absolutely stunning too."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LR</div>
+            <div>
+              <strong>Laura Richardson</strong>
+              <span>Minneapolis, MN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer" id="offer">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get Your Prosperity &amp; Peace Cross</h2>
+        <div class="divider"></div>
+        <p>Walk in the fullness of God's promise starting today</p>
+      </div>
+      <div class="offer-box">
+        <div class="offer-badge">Special Offer</div>
+        <h3>Prosperity &amp; Peace — Original Cross</h3>
+        <div class="price-old">Was $139.00</div>
+        <div class="price">$67.00 <small>today</small></div>
+        <div class="price-installment">or 4 interest-free payments of $16.75</div>
+        <ul class="offer-list">
+          <li>Anointed Prosperity &amp; Peace cross pendant</li>
+          <li>Sterling silver with gold-plated accents</li>
+          <li>Jeremiah 29:11 engraved on the back</li>
+          <li>Elegant chain included (20" adjustable)</li>
+          <li>Prayer card with daily prosperity devotional</li>
+          <li>Premium velvet gift box</li>
+          <li>Free shipping nationwide</li>
+          <li>30-day guarantee — full satisfaction or your money back</li>
+        </ul>
+        <a href="#" class="btn-primary">Get My Cross — $67</a>
+        <div class="guarantee">
+          <span class="guarantee-icon">🔒</span>
+          <span>100% secure checkout &bull; 30-day guarantee &bull; Ships immediately</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Is the cross really anointed with holy oil?</div>
+          <div class="faq-answer">
+            Yes. Every Prosperity and Peace cross is anointed with blessed oil in a
+            prayer ceremony following Catholic tradition. Each piece is individually
+            prayed over before it is shipped to you.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What material is the cross made of?</div>
+          <div class="faq-answer">
+            The cross is crafted from genuine sterling silver (.925) with gold-plated
+            accent details. It is hypoallergenic, tarnish-resistant, and designed
+            for comfortable daily wear.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I wear it in the shower or while sleeping?</div>
+          <div class="faq-answer">
+            Absolutely. The sterling silver construction is highly durable. While we
+            recommend removing it for swimming in chlorinated water, everyday wear
+            including showers and sleep is perfectly fine.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is it a good gift for someone going through hard times?</div>
+          <div class="faq-answer">
+            It's one of the most meaningful gifts you can give. Each cross comes in a
+            premium velvet gift box with a prayer card featuring Jeremiah 29:11 and
+            a daily prosperity devotional — perfect for anyone who needs hope.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if I'm not completely satisfied?</div>
+          <div class="faq-answer">
+            We offer a full 30-day money-back guarantee. If the Prosperity and Peace
+            cross does not meet your expectations for any reason, simply contact us
+            and we will issue a complete refund — no questions asked.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <a href="#" class="logo">PROSPERITY <span>&amp; PEACE</span></a>
+      <p>
+        A sacred cross carrying God's promise of hope, abundance, and peace.<br>
+        &copy; 2025 Prosperity and Peace. All rights reserved.<br>
+        This product does not replace spiritual or ecclesiastical guidance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- FAQ SCRIPT -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('active');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
